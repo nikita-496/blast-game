@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test",
     "start": "set NODE_ENV=development&&webpack serve",
     "dev": "set NODE_ENV=development&&webpack",
     "build": "set NODE_ENV=production&&webpack"
@@ -22,12 +22,14 @@
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.3",
+    "chai": "^4.3.5",
     "copy-webpack-plugin": "^10.2.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.5.2",
+    "mocha": "^9.2.0",
     "node-sass": "^7.0.1",
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.1",
