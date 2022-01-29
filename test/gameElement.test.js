@@ -18,7 +18,7 @@ describe('render tiles in the game field cell', function () {
 describe('render row game filed with tiles ', function () {
   const renderRow = require('../src/js/utilitsOfView/gameElement/renderRowField').renderRow;
   const fillRowWithTitles =
-    require('../src/js/utilitsOfView/gameElement/checkFirstTile').fillRowWithTitles;
+    require('../src/js/utilitsOfView/gameElement/fillRowWithTitles').fillRowWithTitles;
   const checkFirstTileOnRow =
     require('../src/js/utilitsOfView/gameElement/checkFirstTile').checkFirstTileOnRow;
 
@@ -32,10 +32,15 @@ describe('render row game filed with tiles ', function () {
     expect(renderRow(8)).to.be.equal(510 - 100 * 7);
     expect(renderRow(9)).to.be.equal(510 - 100 * 8);
   });
+
   it('the x-coordinate value for the first tile in the row must not change', function () {
     expect(checkFirstTileOnRow(855, 9)).to.be.equal(855);
   });
-  /*it('the number of tiles in each rows must be equal to the size (rows/columns) of the game field', function () {
-    expect(fillRowWithTitles(9)).to.be.deep([855, 803, 751, 699, 647, 595, 543, 491, 439]);
-  });*/
+
+  //under the conditions of starting from 855 points
+  it('the number of tiles in each rows must be equal to the size (rows/columns) of the game field', function () {
+    expect(fillRowWithTitles(855, 9))
+      .to.be.an('array')
+      .that.to.deep.equal([855, 803, 751, 699, 647, 595, 543, 491, 439]);
+  });
 });
