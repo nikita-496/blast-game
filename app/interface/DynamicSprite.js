@@ -6,5 +6,11 @@ class DynamicSprite {
     sprite.setScale(scale);
     return sprite;
   }
+
+  createTileSprite(url, scale) {
+    let sprite = cc.Sprite.create(url);
+    sprite.setScale(scale);
+    return sprite;
+  }
 }
 export default DynamicSprite = DynamicSprite;
