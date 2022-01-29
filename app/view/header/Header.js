@@ -1,7 +1,7 @@
 import path from '../../storage';
 
-import CounterWithTitle from '../../customClasses/gameElement/counter/CounterWithTitle';
-import ProgressBar from '../../customClasses/gameElement/progressBar/ProgressBar';
+import CounterWithTitle from '../gameElement/counter/CounterWithTitle';
+import ProgressBar from '../gameElement/progressBar/ProgressBar';
 class Header extends cc.Layer {
   constructor() {
     super();
