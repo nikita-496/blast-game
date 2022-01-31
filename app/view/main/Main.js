@@ -80,6 +80,7 @@ class Main extends cc.Layer {
         }
 
         //console.log(self._area);
+
         function burning(toBurn) {
           for (let tile in toBurn) {
             console.log(tile);
@@ -87,7 +88,10 @@ class Main extends cc.Layer {
           }
         }
 
-        burning(self._area);
+        //Burn if the area consists of more than 1 of the same type of tile
+        if (self._counter !== 1) {
+          burning(self._area);
+        }
 
         //self._area = cc.FadeOut(2)
 
