@@ -23,6 +23,7 @@ class Main extends cc.Layer {
     super();
     this._gameField = new GameField(new staticSprite());
     this._tiles = Main.getTiles(this._sizeField, 4);
+    this._tileControl = new DynamicSprite();
     this.createListeners();
 
     /*var size = cc.winSize;
@@ -61,7 +62,6 @@ class Main extends cc.Layer {
               self._testedTiles = mainActive.setTestedTile();
 
               self._counter = self._counter + 1;
-
               break;
             }
           }
@@ -79,7 +79,17 @@ class Main extends cc.Layer {
           self._counter = self._counter + 1;
         }
 
-        console.log(self._area);
+        //console.log(self._area);
+        function burning(toBurn) {
+          for (let tile in toBurn) {
+            console.log(tile);
+            self._tileControl.burnTile(toBurn[tile]);
+          }
+        }
+
+        burning(self._area);
+
+        //self._area = cc.FadeOut(2)
 
         return false;
       },
